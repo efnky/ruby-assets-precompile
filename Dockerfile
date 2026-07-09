@@ -20,8 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     chown -R rails:rails tmp log storage
 COPY --from=builder /usr/local/bundle /usr/local/bundle
 COPY . .
-RUN bundle config set --local deployment 'true' && \
-    bundle config set --local without 'development test' && \
+RUN bundle config set --local without 'development test' && \
     SECRET_KEY_BASE=placeholder bin/rails assets:precompile
 EXPOSE 3000
 USER 1001
