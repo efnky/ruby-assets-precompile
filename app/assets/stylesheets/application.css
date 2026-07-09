@@ -1,0 +1,5 @@
+/*
+ *= require does_not_exist_missing_asset
+ *= require_tree .
+ *= require_self
+ */
